@@ -17,6 +17,10 @@
 		27ADC8F527355F7400926996 /* PlacementSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC8F427355F7400926996 /* PlacementSetting.swift */; };
 		27ADC8F92735605A00926996 /* USDZModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC8F82735605A00926996 /* USDZModel.swift */; };
 		27ADC8FB273560C400926996 /* hello.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27ADC8FA273560C400926996 /* hello.usdz */; };
+		27ADC916273D1B1E00926996 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC915273D1B1E00926996 /* ARViewContainer.swift */; };
+		27ADC918273D2EEE00926996 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC917273D2EEE00926996 /* SceneManager.swift */; };
+		27ADC91E273D322000926996 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC91D273D322000926996 /* ControlView.swift */; };
+		27ADC920273D470400926996 /* ScenePersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC91F273D470400926996 /* ScenePersistenceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		27ADC8F427355F7400926996 /* PlacementSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementSetting.swift; sourceTree = "<group>"; };
 		27ADC8F82735605A00926996 /* USDZModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USDZModel.swift; sourceTree = "<group>"; };
 		27ADC8FA273560C400926996 /* hello.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = hello.usdz; sourceTree = "<group>"; };
+		27ADC915273D1B1E00926996 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		27ADC917273D2EEE00926996 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		27ADC91D273D322000926996 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
+		27ADC91F273D470400926996 /* ScenePersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePersistenceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,10 @@
 				27ADC8E7273556A700926996 /* Preview Content */,
 				27ADC8F427355F7400926996 /* PlacementSetting.swift */,
 				27ADC8F82735605A00926996 /* USDZModel.swift */,
+				27ADC915273D1B1E00926996 /* ARViewContainer.swift */,
+				27ADC917273D2EEE00926996 /* SceneManager.swift */,
+				27ADC91D273D322000926996 /* ControlView.swift */,
+				27ADC91F273D470400926996 /* ScenePersistenceHelper.swift */,
 			);
 			path = FocusEntityPlacer;
 			sourceTree = "<group>";
@@ -164,8 +176,12 @@
 				27ADC8E2273556A400926996 /* ContentView.swift in Sources */,
 				27ADC8E0273556A400926996 /* AppDelegate.swift in Sources */,
 				27ADC8F327355CEB00926996 /* CustomARView.swift in Sources */,
+				27ADC918273D2EEE00926996 /* SceneManager.swift in Sources */,
+				27ADC916273D1B1E00926996 /* ARViewContainer.swift in Sources */,
 				27ADC8F92735605A00926996 /* USDZModel.swift in Sources */,
+				27ADC920273D470400926996 /* ScenePersistenceHelper.swift in Sources */,
 				27ADC8F527355F7400926996 /* PlacementSetting.swift in Sources */,
+				27ADC91E273D322000926996 /* ControlView.swift in Sources */,
 				27ADC8E4273556A400926996 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

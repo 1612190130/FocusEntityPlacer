@@ -13,11 +13,16 @@ import ARKit
 class CustomARView: ARView {
     
     var foucsEntity : FocusEntity?
+    var defaultConfiguration: ARWorldTrackingConfiguration {
+        let config = ARWorldTrackingConfiguration()
+        config.planeDetection = [.horizontal, .vertical]
+        return config
+    }
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
         foucsEntity = FocusEntity(on: self, focus: .classic)
-        
+        configure()
     }
     
     @MainActor @objc required dynamic init?(coder decoder: NSCoder) {
@@ -25,9 +30,8 @@ class CustomARView: ARView {
     }
     
     private func configure() {
-        let config = ARWorldTrackingConfiguration()
-        config.planeDetection = [.horizontal, .vertical]
-        session.run(config)
+        
+        session.run(defaultConfiguration)
     }
     
 }

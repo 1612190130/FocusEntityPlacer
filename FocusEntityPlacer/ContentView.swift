@@ -6,61 +6,44 @@
 //
 
 import SwiftUI
-import RealityKit
 import Combine
 
 struct ContentView : View {
-    @State var placementSetting = PlacementSetting()
+    @StateObject var placementSetting = PlacementSetting()
+    @StateObject var sceneManager = SceneManager()
+    @State private var selectedControlMode : Int = 0
     var body: some View {
-        ARViewContainer().edgesIgnoringSafeArea(.all).environmentObject(placementSetting).onTapGesture(count: 1) {
-            placementSetting.placeModel = true
-        }
-    }
-}
-
-struct ARViewContainer: UIViewRepresentable {
-    @EnvironmentObject var placementSetting : PlacementSetting
-    
-    func makeUIView(context: Context) -> CustomARView {
-
-        let arView = CustomARView(frame: .zero)
-
-        placementSetting.sceneObserver = arView.scene.subscribe(to: SceneEvents.Update.self, { (event) in
-            updateScene(for: arView)
-        })
-        
-        return arView
-        
-    }
-    
-    func updateUIView(_ uiView: CustomARView, context: Context) {}
-    
-    private func updateScene(for arView: CustomARView) {
-        arView.foucsEntity?.isEnabled = true
-        if placementSetting.placeModel == true {
-            if let confirmedModel = placementSetting.confirmedModel, let modelEntity = confirmedModel.modelEntity {
-                self.place(modelEntity, in: arView)
-                self.placementSetting.placeModel = false
+        ZStack {
+            ARViewContainer().edgesIgnoringSafeArea(.all).environmentObject(placementSetting)
+                .environmentObject(sceneManager)
+                .onTapGesture(count: 1) {
+                placementSetting.readyToPlace.toggle()
+                
             }
-        }
+            VStack {
+                Spacer()
+                if self.placementSetting.readyToPlace == false {
+                    ControlView(selectedControlMode: $selectedControlMode).environmentObject(sceneManager)
+                } else {
+                    Button("Place") {
+                        
+                        let modelAnchor = ModelAnchor(model:self.placementSetting.selectedModel!, anchor: nil)
+                        self.placementSetting.modelConfirmedForPlacement.append(modelAnchor)
+//                        self.placementSetting.selectedModel = nil
+                    }
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(15)
+                    .font(.headline)
+                    
+                }
+            }.padding(.bottom)
+            
+        }.edgesIgnoringSafeArea(.all)
         
     }
-    
-    private func place(_ modelEntity: ModelEntity, in arView : ARView) {
-        let clonedEntity = modelEntity.clone(recursive: true)
-        
-        clonedEntity.generateCollisionShapes(recursive: true)
-        
-        arView.installGestures([.translation, .rotation], for: clonedEntity)
-        
-        let anchorEntity = AnchorEntity(plane: .any)
-        anchorEntity.addChild(clonedEntity)
-        arView.scene.addAnchor(anchorEntity)
-        
-        print("Added modelEntity")
-    }
-    
 }
+
+
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {

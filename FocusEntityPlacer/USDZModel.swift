@@ -17,11 +17,24 @@ class USDZModel{
     
     init(modelName: String){
         self.modelName = modelName
+//        let fileName = self.modelName+".usdz"
+//        self.cancellable = ModelEntity.loadModelAsync(named: fileName)
+//            .sink(receiveCompletion : {loadCompletion in
+//                print("1")
+//            }, receiveValue:{modelEntity in
+//                self.modelEntity = modelEntity
+//            })
+    }
+    
+    func asyncLoadModelEntity(handler : @escaping(_ completed : Bool, _ error: Error?)->Void) {
         let fileName = self.modelName+".usdz"
         self.cancellable = ModelEntity.loadModelAsync(named: fileName)
             .sink(receiveCompletion : {loadCompletion in
                 print("1")
+                handler(false,nil)
             }, receiveValue:{modelEntity in
+                
+                handler(true,nil)
                 self.modelEntity = modelEntity
             })
     }
