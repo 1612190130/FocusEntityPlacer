@@ -11,20 +11,22 @@ import Combine
 struct ContentView : View {
     @StateObject var placementSetting = PlacementSetting()
     @StateObject var sceneManager = SceneManager()
+    @StateObject var modelDeletionManager = ModelDeletionManager()
+
     @State private var selectedControlMode : Int = 0
     var body: some View {
         ZStack {
-            ARViewContainer().edgesIgnoringSafeArea(.all).environmentObject(placementSetting)
+            ARViewContainer().edgesIgnoringSafeArea(.all)
+                .environmentObject(placementSetting)
                 .environmentObject(sceneManager)
+                .environmentObject(modelDeletionManager)
                 .onTapGesture(count: 1) {
                 placementSetting.readyToPlace.toggle()
                 
             }
             VStack {
                 Spacer()
-                if self.placementSetting.readyToPlace == false {
-                    ControlView(selectedControlMode: $selectedControlMode).environmentObject(sceneManager)
-                } else {
+                if self.placementSetting.readyToPlace == true {
                     Button("Place") {
                         
                         let modelAnchor = ModelAnchor(model:self.placementSetting.selectedModel!, anchor: nil)
@@ -35,6 +37,11 @@ struct ContentView : View {
                     .cornerRadius(15)
                     .font(.headline)
                     
+                } else if self.modelDeletionManager.entitySelectedForDeletion != nil {
+                    DeletionView().environmentObject(sceneManager).environmentObject(modelDeletionManager)
+                } else {
+                    ControlView(selectedControlMode: $selectedControlMode).environmentObject(sceneManager)
+
                 }
             }.padding(.bottom)
             

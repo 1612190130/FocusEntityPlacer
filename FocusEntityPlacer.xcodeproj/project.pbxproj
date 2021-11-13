@@ -21,6 +21,8 @@
 		27ADC918273D2EEE00926996 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC917273D2EEE00926996 /* SceneManager.swift */; };
 		27ADC91E273D322000926996 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC91D273D322000926996 /* ControlView.swift */; };
 		27ADC920273D470400926996 /* ScenePersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC91F273D470400926996 /* ScenePersistenceHelper.swift */; };
+		27ADC950273FB44800926996 /* ModelDeletionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC94F273FB44800926996 /* ModelDeletionManager.swift */; };
+		27ADC952273FBB5A00926996 /* DeletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC951273FBB5A00926996 /* DeletionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		27ADC917273D2EEE00926996 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		27ADC91D273D322000926996 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		27ADC91F273D470400926996 /* ScenePersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePersistenceHelper.swift; sourceTree = "<group>"; };
+		27ADC94F273FB44800926996 /* ModelDeletionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDeletionManager.swift; sourceTree = "<group>"; };
+		27ADC951273FBB5A00926996 /* DeletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				27ADC917273D2EEE00926996 /* SceneManager.swift */,
 				27ADC91D273D322000926996 /* ControlView.swift */,
 				27ADC91F273D470400926996 /* ScenePersistenceHelper.swift */,
+				27ADC94F273FB44800926996 /* ModelDeletionManager.swift */,
+				27ADC951273FBB5A00926996 /* DeletionView.swift */,
 			);
 			path = FocusEntityPlacer;
 			sourceTree = "<group>";
@@ -173,7 +179,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27ADC952273FBB5A00926996 /* DeletionView.swift in Sources */,
 				27ADC8E2273556A400926996 /* ContentView.swift in Sources */,
+				27ADC950273FB44800926996 /* ModelDeletionManager.swift in Sources */,
 				27ADC8E0273556A400926996 /* AppDelegate.swift in Sources */,
 				27ADC8F327355CEB00926996 /* CustomARView.swift in Sources */,
 				27ADC918273D2EEE00926996 /* SceneManager.swift in Sources */,

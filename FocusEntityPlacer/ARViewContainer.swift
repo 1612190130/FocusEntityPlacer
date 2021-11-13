@@ -14,10 +14,12 @@ private let anchorNamePrefix = "model-"
 struct ARViewContainer: UIViewRepresentable {
     @EnvironmentObject var placementSetting : PlacementSetting
     @EnvironmentObject var sceneManager : SceneManager
+    @EnvironmentObject var modelDeletionManager : ModelDeletionManager
+
 
     func makeUIView(context: Context) -> CustomARView {
 
-        let arView = CustomARView(frame: .zero)
+        let arView = CustomARView(frame: .zero, modelDeletionManager:  modelDeletionManager)
         arView.session.delegate = context.coordinator
         placementSetting.sceneObserver = arView.scene.subscribe(to: SceneEvents.Update.self, { (event) in
             self.updateScene(for: arView)
@@ -40,15 +42,15 @@ struct ARViewContainer: UIViewRepresentable {
                 // Anchor is being loaded from persisted scene
                 self.place(modelEntity, for: anchor, in: arView)
                 
-                arView.session.add(anchor: anchor)
+//                arView.session.add(anchor: anchor)  // persistence anchor has been added in loadScene
                 
-                self.placementSetting.recentlyPlaced.append(modelAnchor.model)
+//                self.placementSetting.recentlyPlaced.append(modelAnchor.model)
             } else if let transform = getTransformForPlacement(in: arView) {
                 // Anchor needs to be created from placement
                 let anchorName = anchorNamePrefix + modelAnchor.model.modelName
                 let anchor = ARAnchor(name:anchorName, transform: transform)
                 
-                self.place(modelEntity, for: anchor, in: arView)
+                //self.place(modelEntity, for: anchor, in: arView)  // avoid duplicate placement
                 
                 arView.session.add(anchor: anchor)
                 
@@ -130,9 +132,9 @@ extension ARViewContainer {
                 if let anchorName = anchor.name, anchorName.hasPrefix(anchorNamePrefix) {
                     let modelName = anchorName.dropFirst(anchorNamePrefix.count)
                     print("ARSession: didAdd anchor for modelName: \(modelName)")
-                    
+
                     let model = USDZModel(modelName: String(modelName))
-                    
+
                     model.asyncLoadModelEntity { completed, error in
                         if completed {
                             let modelAnchor = ModelAnchor(model:model, anchor: anchor)
@@ -140,7 +142,7 @@ extension ARViewContainer {
                             print("(\(self.parent.placementSetting.modelConfirmedForPlacement.count)) Adding modelAnchor with name: \(model.modelName)")
                         }
                     }
-                    
+
                 }
             }
         }

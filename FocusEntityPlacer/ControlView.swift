@@ -105,6 +105,10 @@ struct SceneButtons: View {
         Spacer()
         ControlButton(systemIconName: "trash") {
             print("Clear Scene button pressed.")
+            for anchorEntity in self.sceneManager.anchorEntities {
+                print("Removing anchorEntity with id :\(String(describing: anchorEntity.anchorIdentifier))")
+                anchorEntity.removeFromParent()
+            }
         }
        
     }
