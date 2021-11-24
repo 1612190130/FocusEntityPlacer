@@ -21,7 +21,7 @@ struct ContentView : View {
                 .environmentObject(sceneManager)
                 .environmentObject(modelDeletionManager)
                 .onTapGesture(count: 1) {
-                placementSetting.readyToPlace.toggle()
+                //placementSetting.readyToPlace.toggle()
                 
             }
             VStack {
@@ -40,7 +40,9 @@ struct ContentView : View {
                 } else if self.modelDeletionManager.entitySelectedForDeletion != nil {
                     DeletionView().environmentObject(sceneManager).environmentObject(modelDeletionManager)
                 } else {
-                    ControlView(selectedControlMode: $selectedControlMode).environmentObject(sceneManager)
+                    ControlView(selectedControlMode: $selectedControlMode)
+                        .environmentObject(sceneManager)
+                        .environmentObject(placementSetting)
 
                 }
             }.padding(.bottom)

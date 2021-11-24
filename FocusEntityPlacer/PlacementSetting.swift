@@ -23,7 +23,7 @@ class PlacementSetting  : ObservableObject {
         }
     }
     var placeModel : Bool = false
-    @Published var readyToPlace : Bool  = false
+    @Published var readyToPlace : Bool  = true
     @Published var recentlyPlaced: [USDZModel] = []
     
     init() {
