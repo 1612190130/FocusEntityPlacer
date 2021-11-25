@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27505E5E274E60BC0060501D /* DOET.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 27505E5D274E60BC0060501D /* DOET.rcproject */; };
-		27505E62274E7B610060501D /* Animation.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 27505E61274E7B610060501D /* Animation.rcproject */; };
 		27505E68274E88CE0060501D /* crown.reality in Resources */ = {isa = PBXBuildFile; fileRef = 27505E67274E88CE0060501D /* crown.reality */; };
 		27505E6A274E8ACC0060501D /* fanfare.reality in Resources */ = {isa = PBXBuildFile; fileRef = 27505E69274E8ACC0060501D /* fanfare.reality */; };
 		27505E6C274F40140060501D /* qs_Home.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27505E6B274F40140060501D /* qs_Home.usdz */; };
 		27505E6E274F412C0060501D /* user_like_blue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27505E6D274F412C0060501D /* user_like_blue.usdz */; };
 		27ADC8E0273556A400926996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC8DF273556A400926996 /* AppDelegate.swift */; };
 		27ADC8E2273556A400926996 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC8E1273556A400926996 /* ContentView.swift */; };
-		27ADC8E4273556A400926996 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC8E3273556A400926996 /* Experience.rcproject */; };
 		27ADC8E6273556A700926996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27ADC8E5273556A700926996 /* Assets.xcassets */; };
 		27ADC8E9273556A700926996 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27ADC8E8273556A700926996 /* Preview Assets.xcassets */; };
 		27ADC8F127355CA500926996 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 27ADC8F027355CA500926996 /* FocusEntity */; };
@@ -32,8 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		27505E5D274E60BC0060501D /* DOET.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = DOET.rcproject; sourceTree = "<group>"; };
-		27505E61274E7B610060501D /* Animation.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Animation.rcproject; sourceTree = "<group>"; };
 		27505E67274E88CE0060501D /* crown.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = crown.reality; sourceTree = "<group>"; };
 		27505E69274E8ACC0060501D /* fanfare.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = fanfare.reality; sourceTree = "<group>"; };
 		27505E6B274F40140060501D /* qs_Home.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = qs_Home.usdz; sourceTree = "<group>"; };
@@ -41,7 +36,6 @@
 		27ADC8DC273556A400926996 /* FocusEntityPlacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusEntityPlacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27ADC8DF273556A400926996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27ADC8E1273556A400926996 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		27ADC8E3273556A400926996 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		27ADC8E5273556A700926996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27ADC8E8273556A700926996 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27ADC8F227355CEB00926996 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
@@ -91,13 +85,10 @@
 				27505E6B274F40140060501D /* qs_Home.usdz */,
 				27505E69274E8ACC0060501D /* fanfare.reality */,
 				27505E67274E88CE0060501D /* crown.reality */,
-				27505E61274E7B610060501D /* Animation.rcproject */,
-				27505E5D274E60BC0060501D /* DOET.rcproject */,
 				27ADC8FA273560C400926996 /* hello.usdz */,
 				27ADC8DF273556A400926996 /* AppDelegate.swift */,
 				27ADC8E1273556A400926996 /* ContentView.swift */,
 				27ADC8F227355CEB00926996 /* CustomARView.swift */,
-				27ADC8E3273556A400926996 /* Experience.rcproject */,
 				27ADC8E5273556A700926996 /* Assets.xcassets */,
 				27ADC8E7273556A700926996 /* Preview Content */,
 				27ADC8F427355F7400926996 /* PlacementSetting.swift */,
@@ -202,19 +193,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				27ADC952273FBB5A00926996 /* DeletionView.swift in Sources */,
-				27505E62274E7B610060501D /* Animation.rcproject in Sources */,
 				27ADC8E2273556A400926996 /* ContentView.swift in Sources */,
 				27ADC950273FB44800926996 /* ModelDeletionManager.swift in Sources */,
 				27ADC8E0273556A400926996 /* AppDelegate.swift in Sources */,
 				27ADC8F327355CEB00926996 /* CustomARView.swift in Sources */,
 				27ADC918273D2EEE00926996 /* SceneManager.swift in Sources */,
-				27505E5E274E60BC0060501D /* DOET.rcproject in Sources */,
 				27ADC916273D1B1E00926996 /* ARViewContainer.swift in Sources */,
 				27ADC8F92735605A00926996 /* USDZModel.swift in Sources */,
 				27ADC920273D470400926996 /* ScenePersistenceHelper.swift in Sources */,
 				27ADC8F527355F7400926996 /* PlacementSetting.swift in Sources */,
 				27ADC91E273D322000926996 /* ControlView.swift in Sources */,
-				27ADC8E4273556A400926996 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
