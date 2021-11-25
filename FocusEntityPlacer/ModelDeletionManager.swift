@@ -9,25 +9,24 @@ import SwiftUI
 import RealityKit
 
 class ModelDeletionManager : ObservableObject {
-    @Published var entitySelectedForDeletion : ModelEntity? = nil {
+    @Published var entitySelectedForDeletion : Entity? = nil {
         willSet(newValue) {
             if self.entitySelectedForDeletion == nil, let newlySelectedModelEntity = newValue {
                 print("Selecting new entitySelectedFor Deletion, no prior selection.")
                 
                 let component = ModelDebugOptionsComponent(visualizationMode: .lightingDiffuse)
-                newlySelectedModelEntity.modelDebugOptions = component
+                newlySelectedModelEntity.components.set(component)
+//                newlySelectedModelEntity.modelDebugOptions = component
             } else if let previouslySelectedModelEntity = self.entitySelectedForDeletion, let newlySelectedModelEntity = newValue {
                 print("Selecting new entitySelectedFor Deletion, had prior selection.")
-                
-                previouslySelectedModelEntity.modelDebugOptions = nil
+                previouslySelectedModelEntity.components.remove(ModelDebugOptionsComponent.self)
+//                previouslySelectedModelEntity.modelDebugOptions = nil
                 let component = ModelDebugOptionsComponent(visualizationMode: .lightingDiffuse)
-                newlySelectedModelEntity.modelDebugOptions = component
+                newlySelectedModelEntity.components.set(component)
 
             } else if newValue == nil {
                 print("Clearing entitySelectedForDelection.")
-
-                self.entitySelectedForDeletion?.modelDebugOptions = nil
-
+                self.entitySelectedForDeletion?.components.remove(ModelDebugOptionsComponent.self)
             }
         }
     }

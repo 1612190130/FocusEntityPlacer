@@ -28,9 +28,13 @@ struct ContentView : View {
                 Spacer()
                 if self.placementSetting.readyToPlace == true {
                     Button("Place") {
-                        
-                        let modelAnchor = ModelAnchor(model:self.placementSetting.selectedModel!, anchor: nil)
-                        self.placementSetting.modelConfirmedForPlacement.append(modelAnchor)
+                        if let selectModel = self.placementSetting.selectedModel {
+                            let modelAnchor = ModelAnchor(model: selectModel, anchor: nil)
+                            self.placementSetting.modelConfirmedForPlacement.append(modelAnchor)
+                        } else {
+                            print("Error: \(self.placementSetting.selectedModel?.modelName) are not ready")
+                        }
+                       
 //                        self.placementSetting.selectedModel = nil
                     }
                     .background(.ultraThinMaterial)

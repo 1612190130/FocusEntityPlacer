@@ -62,39 +62,20 @@ struct ARViewContainer: UIViewRepresentable {
         
     }
     
-    private func place(_ modelEntity: ModelEntity, for anchor: ARAnchor, in arView : ARView) {
-//        let clonedEntity = modelEntity.clone(recursive: true)
-//
-//        clonedEntity.generateCollisionShapes(recursive: true)
-//
-//        arView.installGestures([.translation, .rotation], for: clonedEntity)
-//
-//        let anchorEntity = AnchorEntity(plane: .any)
-//        anchorEntity.addChild(clonedEntity)
+    private func place(_ entity: Entity, for anchor: ARAnchor, in arView : ARView) {
+       
+        let clonedEntity = entity.clone(recursive: true)
         
-//        guard let anchorEntity = try? DOET.loadCart() else {
-//            print("Error: can not load doet")
-//            return
-//        }
-        
-//        guard let anchorEntity = try? Animation.load场景() else {
-//            print("Error: can not load Animation")
-//            return
-//        }
-        
-        guard let anchorEntity = loadRealityComposerScene(filename: "fanfare",
-                                 fileExtension: "reality",
-                                                          sceneName:"") else {
-            print("Error: can not load entity")
-            return
-        }
-        
+        clonedEntity.generateCollisionShapes(recursive: true)
+//        arView.installGestures([.translation, .rotation], for: try clonedEntity as! ModelEntity)
+        let anchorEntity = AnchorEntity(plane: .any)
+        anchorEntity.addChild(clonedEntity)
         anchorEntity.anchoring = AnchoringComponent(anchor)
         arView.scene.addAnchor(anchorEntity)
 
-//        self.sceneManager.anchorEntities.append(anchorEntity)
+        self.sceneManager.anchorEntities.append(anchorEntity)
         
-        print("Added modelEntity")
+        print("Added modelEntity with \(clonedEntity.children.count)")
     }
     
     private func getTransformForPlacement(in arView: ARView) -> simd_float4x4? {
@@ -103,36 +84,6 @@ struct ARViewContainer: UIViewRepresentable {
         }
         guard let raycastResult = arView.session.raycast(query).first else {return nil}
         return raycastResult.worldTransform
-    }
-    
-    func createRealityURL(filename: String,
-                          fileExtension: String,
-                          sceneName:String) -> URL? {
-        // Create a URL that points to the specified Reality file.
-        guard let realityFileURL = Bundle.main.url(forResource: filename,
-                                                   withExtension: fileExtension) else {
-            print("Error finding Reality file \(filename).\(fileExtension)")
-            return nil
-        }
-
-        // Append the scene name to the URL to point to
-        // a single scene within the file.
-        let realityFileSceneURL = realityFileURL.appendingPathComponent(sceneName,
-                                                                        isDirectory: false)
-        return realityFileSceneURL
-    }
-    
-    func loadRealityComposerScene(filename: String,
-                                    fileExtension: String,
-                                    sceneName: String) -> (Entity & HasAnchoring)? {
-        guard let realitySceneURL = createRealityURL(filename: filename,
-                                                     fileExtension: fileExtension,
-                                                     sceneName: sceneName) else {
-            return nil
-        }
-        let loadedAnchor = try? Entity.loadAnchor(contentsOf: realitySceneURL)
-        
-        return loadedAnchor
     }
 }
 
@@ -190,7 +141,6 @@ extension ARViewContainer {
                             print("(\(self.parent.placementSetting.modelConfirmedForPlacement.count)) Adding modelAnchor with name: \(model.modelName)")
                         }
                     }
-
                 }
             }
         }

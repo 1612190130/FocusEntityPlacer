@@ -11,6 +11,8 @@
 		27505E62274E7B610060501D /* Animation.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 27505E61274E7B610060501D /* Animation.rcproject */; };
 		27505E68274E88CE0060501D /* crown.reality in Resources */ = {isa = PBXBuildFile; fileRef = 27505E67274E88CE0060501D /* crown.reality */; };
 		27505E6A274E8ACC0060501D /* fanfare.reality in Resources */ = {isa = PBXBuildFile; fileRef = 27505E69274E8ACC0060501D /* fanfare.reality */; };
+		27505E6C274F40140060501D /* qs_Home.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27505E6B274F40140060501D /* qs_Home.usdz */; };
+		27505E6E274F412C0060501D /* user_like_blue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27505E6D274F412C0060501D /* user_like_blue.usdz */; };
 		27ADC8E0273556A400926996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC8DF273556A400926996 /* AppDelegate.swift */; };
 		27ADC8E2273556A400926996 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC8E1273556A400926996 /* ContentView.swift */; };
 		27ADC8E4273556A400926996 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 27ADC8E3273556A400926996 /* Experience.rcproject */; };
@@ -34,6 +36,8 @@
 		27505E61274E7B610060501D /* Animation.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Animation.rcproject; sourceTree = "<group>"; };
 		27505E67274E88CE0060501D /* crown.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = crown.reality; sourceTree = "<group>"; };
 		27505E69274E8ACC0060501D /* fanfare.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = fanfare.reality; sourceTree = "<group>"; };
+		27505E6B274F40140060501D /* qs_Home.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = qs_Home.usdz; sourceTree = "<group>"; };
+		27505E6D274F412C0060501D /* user_like_blue.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = user_like_blue.usdz; sourceTree = "<group>"; };
 		27ADC8DC273556A400926996 /* FocusEntityPlacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusEntityPlacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27ADC8DF273556A400926996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27ADC8E1273556A400926996 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 		27ADC8DE273556A400926996 /* FocusEntityPlacer */ = {
 			isa = PBXGroup;
 			children = (
+				27505E6D274F412C0060501D /* user_like_blue.usdz */,
+				27505E6B274F40140060501D /* qs_Home.usdz */,
 				27505E69274E8ACC0060501D /* fanfare.reality */,
 				27505E67274E88CE0060501D /* crown.reality */,
 				27505E61274E7B610060501D /* Animation.rcproject */,
@@ -178,7 +184,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27505E6C274F40140060501D /* qs_Home.usdz in Resources */,
 				27ADC8E9273556A700926996 /* Preview Assets.xcassets in Resources */,
+				27505E6E274F412C0060501D /* user_like_blue.usdz in Resources */,
 				27ADC8E6273556A700926996 /* Assets.xcassets in Resources */,
 				27505E6A274E8ACC0060501D /* fanfare.reality in Resources */,
 				27505E68274E88CE0060501D /* crown.reality in Resources */,

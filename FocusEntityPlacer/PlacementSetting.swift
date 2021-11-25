@@ -27,10 +27,9 @@ class PlacementSetting  : ObservableObject {
     @Published var recentlyPlaced: [USDZModel] = []
     
     init() {
-        let model = USDZModel(modelName: "hello")
-        model.asyncLoadModelEntity { completed, error in
+        self.selectedModel = USDZModel(modelName: "crown.reality")
+        self.selectedModel?.asyncLoadModelEntity { completed, error in
             if completed {
-                self.selectedModel = model
             }
         }
         
